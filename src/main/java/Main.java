@@ -7,8 +7,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        List<City> citiesList = parseCities();
+        print(citiesList);
 
-        print(parseCities());
+        Sort.sortByNameIgnoreCase(citiesList);
+        print(citiesList);
+
+        Sort.sortByDistrictNameNotIgnoreCase(citiesList);
+        print(citiesList);
 
     }
 
@@ -43,4 +49,6 @@ public class Main {
     public static void print(List<City> citiesList) {
         citiesList.forEach(System.out::println);
     }
+
+
 }
